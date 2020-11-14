@@ -1,0 +1,37 @@
+:host {
+    padding: 20px;
+}
+
+h2 {
+    margin: 4px 0 16px 0;
+}
+
+.no-lists {
+    text-align: center;
+}
+
+.card-stats {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.stats mat-icon {
+    margin-right: 10px;
+}
+
+#add {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.add-list-footer {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,31 @@
+{
+  "npmScope": "qarun-qb",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "voice-list": {
+      "tags": []
+    },
+    "voice-list-e2e": {
+      "tags": []
+    },
+    "tt-pothole-backend": {
+      "tags": []
+    },
+    "voice-list-backend": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    }
+  }
+}

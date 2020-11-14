@@ -1,0 +1,52 @@
+<ng-container *ngIf = 'lists$ | async as lists;'>
+    <main *ngIf = 'lists.length > 0; else noLists' class = 'card-list'> 
+        <section 
+            matRipple
+            class = 'card'
+            *ngFor = 'let list of lists'
+            (click) = 'openListDetais(list.listName)'>
+            <h2>{{list.listName}}</h2>
+        
+            <section class="card-stats">
+
+                <div class="stats pending">
+                    <mat-icon>schedule</mat-icon>
+                    <span>{{list.pending}}</span>
+                </div>
+        
+                <div class="stats completed">
+                    <mat-icon>done</mat-icon>
+                    <span>{{list.completed}}</span>
+                </div>
+            
+            </section>
+        
+        </section>
+    </main>
+</ng-container>
+
+<ng-template #noLists>
+    <div class="no-lists">
+        <h3>No Lists to display</h3>
+        <button (click) = 'createList(addListDialog)' mat-raised-button color = 'primary'>Add a List</button>
+    </div>
+</ng-template>
+
+<button id = 'add' mat-mini-fab (click) = 'createList(addListDialog)'>
+    <mat-icon>add</mat-icon>
+</button>
+
+<ng-template #addListDialog>
+    <h3>Add a new List</h3>
+    
+    <mat-form-field style = 'padding: 10px 0;'>
+        <mat-label>List Name</mat-label>
+        <input matInput #newListName required>
+        <mat-error>List name is required</mat-error>
+    </mat-form-field>
+
+    <footer class = 'add-list-footer'>
+        <button mat-raised-button color = 'primary' [mat-dialog-close] = 'newListName.value'>Add</button>
+        <button mat-raised-button color = 'warn' [mat-dialog-close] = 'newListName.value'>Cancel</button>
+    </footer>
+</ng-template>

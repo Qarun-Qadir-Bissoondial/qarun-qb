@@ -24,7 +24,10 @@
               "apps/voice-list/src/assets",
               "apps/voice-list/src/manifest.webmanifest"
             ],
-            "styles": ["apps/voice-list/src/styles.css"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/voice-list/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -91,7 +94,9 @@
               "apps/voice-list/tsconfig.app.json",
               "apps/voice-list/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -116,7 +121,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/voice-list-e2e/tsconfig.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -134,7 +141,9 @@
             "outputPath": "dist/apps/tt-pothole-backend",
             "main": "apps/tt-pothole-backend/src/main.ts",
             "tsConfig": "apps/tt-pothole-backend/tsconfig.app.json",
-            "assets": ["apps/tt-pothole-backend/src/assets"]
+            "assets": [
+              "apps/tt-pothole-backend/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -159,7 +168,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/tt-pothole-backend/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/tt-pothole-backend/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -184,7 +195,9 @@
             "outputPath": "dist/apps/voice-list-backend",
             "main": "apps/voice-list-backend/src/main.ts",
             "tsConfig": "apps/voice-list-backend/tsconfig.app.json",
-            "assets": ["apps/voice-list-backend/src/assets"]
+            "assets": [
+              "apps/voice-list-backend/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -209,7 +222,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/voice-list-backend/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/voice-list-backend/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -230,7 +245,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/models/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/models/**/*.ts"
+            ]
           }
         },
         "test": {

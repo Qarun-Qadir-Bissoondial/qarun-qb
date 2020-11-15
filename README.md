@@ -1,4 +1,7 @@
-# VoiceList
+# qarun-qb
+
+This is a list of personal projects that fit in an Nx workspace
+Hosting for each coming soon.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 

@@ -19,5 +19,7 @@ module.exports = {
     '<rootDir>/apps/tt-pothole-backend',
     '<rootDir>/apps/voice-list-backend',
     '<rootDir>/libs/models',
+    '<rootDir>/apps/family-records',
+    '<rootDir>/apps/portfolio',
   ],
 };

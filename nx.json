@@ -26,6 +26,27 @@
     },
     "models": {
       "tags": []
+    },
+    "medical-records": {
+      "tags": []
+    },
+    "medical-records-e2e": {
+      "tags": [],
+      "implicitDependencies": ["medical-records"]
+    },
+    "family-records": {
+      "tags": []
+    },
+    "family-records-e2e": {
+      "tags": [],
+      "implicitDependencies": ["family-records"]
+    },
+    "portfolio": {
+      "tags": []
+    },
+    "portfolio-e2e": {
+      "tags": [],
+      "implicitDependencies": ["portfolio"]
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "default": "qarun-qb"
+  },
+  "targets": {
+    "qarun-qb": {
+      "hosting": {
+        "voice-list": [
+          "qarun-qb-voice-list"
+        ],
+        "medical-records": [
+          "qarun-qb-medical-records"
+        ],
+        "family-records": [
+          "qarun-qb-family-records"
+        ],
+        "portfolio": [
+          "qarun-qb"
+        ]
+      }
+    }
+  }
+}

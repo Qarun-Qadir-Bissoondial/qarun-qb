@@ -22,7 +22,7 @@ jobs:
       - name: Run Affected Tests
         shell: bash
         run: npm run affected:test -- --base=remotes/origin/main
-      - run: npm run affected:build:prod
+      - run: npm run affected:build:prod -- --base=remotes/origin/main
       - name: Run Deployment
         shell: bash
         run: ./deploy.sh ${{ secrets.FIREBASE_TOKEN }}

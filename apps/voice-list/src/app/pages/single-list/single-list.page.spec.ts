@@ -14,7 +14,7 @@ class RouterWithExtras {
   }
 }
 
-fdescribe('SingleListPage', () => {
+xdescribe('SingleListPage', () => {
   let component: SingleListPage;
   let fixture: ComponentFixture<SingleListPage>;
 

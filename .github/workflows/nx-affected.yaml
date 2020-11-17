@@ -1,4 +1,4 @@
-name: Nx Affected CI
+name: Nx Affected CI/CD
 on:
   pull_request:
     branches: [main]
@@ -18,6 +18,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: git fetch origin main
       - run: npm install
+      - run: npm install -g firebase-tools
       - name: Run Affected Tests
         shell: bash
         run: npm run affected:test -- --base=remotes/origin/main
+      - run: npm run affected:build:prod
+      - name: Run Deployment
+        shell: bash
+        run: ./deploy.sh ${{ secrets.FIREBASE_TOKEN }}

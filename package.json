@@ -27,6 +27,8 @@
     "dep-graph": "nx dep-graph",
     "workspace-schematic": "nx workspace-schematic",
     "help": "nx help",
+    "firebase:help": "firebase help",
+    "firebase": "firebase",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
@@ -80,6 +82,7 @@
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.0.0",
     "faker": "^5.1.0",
+    "firebase-tools": "^8.16.2",
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.3.2",
     "prettier": "2.0.4",

@@ -14,10 +14,10 @@ do
     if [ -z $1 ]
     then
         echo "Local build"
-        firebase deploy --only hosting:$targetName
+        npm run firebase deploy -- --only hosting:$targetName
     else
         echo "Production build"
-        firebase deploy --token $1 --only hosting:$targetName
+        npm run firebase deploy -- --token $1 --only hosting:$targetName
     fi
     # 
 done

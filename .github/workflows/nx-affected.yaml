@@ -36,4 +36,4 @@ jobs:
       - run: npm run affected:build:prod -- --base=remotes/origin/main
       - name: Run Deployment
         shell: bash
-        run: sudo ./deploy.sh ${{ secrets.FIREBASE_TOKEN }}
+        run: sudo chmod +x ./deploy.sh && sudo ./deploy.sh ${{ secrets.FIREBASE_TOKEN }}

@@ -18,6 +18,7 @@ import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bott
 })
 export class SingleListPage implements OnDestroy {
   @ViewChild(MatRipple) ripple: MatRipple;
+  @ViewChild('help') helpTemplate: TemplateRef<any>;
 
   list$: Observable<ListWithItems>;
   listName: string;
@@ -34,7 +35,6 @@ export class SingleListPage implements OnDestroy {
       this.listName = this.data.listName;
       this.list$ = this.store.pipe(select(selectSingleList, { listName: this.listName }));
       this.toggleListening(true);
-
   }
 
   toggleListening(checked: boolean) {
@@ -144,17 +144,15 @@ export class SingleListPage implements OnDestroy {
       {
         'uncheck :item': markIncomplete
       }
-      // {
-      //   'complete all': () => {
-      //     for (const item in this.list.items) {
-      //       this.markAsComplete(item);
-      //     }
-      //   }
-      // }
     ];
 
     // @ts-ignore
     this.voice.addCommands(commands).init();
+    console.log('added commands...');
+  }
+
+  openHelp() {
+    this.dialog.open(this.helpTemplate);
   }
 
   ngOnDestroy(): void {

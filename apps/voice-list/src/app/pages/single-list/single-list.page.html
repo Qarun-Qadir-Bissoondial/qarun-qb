@@ -53,13 +53,18 @@
             <span>Back</span>
             <mat-icon>arrow_back</mat-icon>
         </div>
-        <div matRipple (click) = 'editList(editTemplate, list.listName)' matRipple class="action edit" style = 'border-right: 1px solid #aaa;'>
+        <div matRipple (click) = 'editList(editTemplate, list.listName)' matRipple class="action edit">
             <span>Edit</span>
             <mat-icon>edit</mat-icon>
         </div>
         <div matRipple (click) = 'deleteList(confirmDelete, list.listName)' matRipple class="action delete" style = 'color: red;'>
             <span>Delete</span>
             <mat-icon>delete</mat-icon>
+        </div>
+
+        <div matRipple (click) = 'openHelp()' matRipple class="action">
+            <span>help</span>
+            <mat-icon>help</mat-icon>
         </div>
     </footer>
 
@@ -108,3 +113,7 @@
     </ng-template>
 
 </ng-container>
+
+<ng-template #help>
+    <p>hee hee</p>
+</ng-template>

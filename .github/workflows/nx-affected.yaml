@@ -29,7 +29,6 @@ jobs:
             ${{ runner.os }}-
       - run: git fetch origin main
       - run: npm install
-      - run: npm install -g firebase-tools
       - name: Run Affected Tests
         shell: bash
         run: npm run affected:test -- --base=remotes/origin/main

@@ -30,12 +30,16 @@ footer {
     margin-top: auto;
     display: grid;
     place-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     border: 1px solid #aaa;
     border-bottom: 0;
     border-radius: 8px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+footer div:not(:first-child) {
+    border-left: 1px solid #ccc;
 }
 
 footer .action {

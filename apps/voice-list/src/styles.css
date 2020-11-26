@@ -18,17 +18,17 @@ nav .mat-ink-bar {
 
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     row-gap: 10px;
-    column-gap: 10px;
-    /* place-items: center; */
+    column-gap: 2rem;
+    place-items: center;
 }
 
 .card {
+    width: 100%;
     border-radius: 8px;
-    /* width: 200px; */
+    padding: 0.5rem;
     background-color: #F0F0F0;
-    padding: 10px;
     cursor: pointer;
 }
 

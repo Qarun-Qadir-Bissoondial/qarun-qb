@@ -1,0 +1,21 @@
+@import '../../common.scss';
+
+.introduction {
+    .img-title {
+        text-align: center;
+
+        img {
+            border-radius: 50%;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    }
+
+    .actions * {
+        display: block;
+        @extend .margin-med;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+    }
+}

@@ -16,11 +16,17 @@
         <p>Lorem Ipsum yada yada yada</p>
 
         <div class="actions">
-            <button mat-raised-button color = 'primary'>Skills</button>
-            <button mat-raised-button color = 'primary'>Projects</button>
-            <button mat-raised-button color = 'primary'>Experience</button>
+            <ng-template *ngTemplateOutlet = 'btn; context: {btnText: "Skills"}'></ng-template>
+            <ng-template *ngTemplateOutlet = 'btn; context: {btnText: "Projects"}'></ng-template>
+            <ng-template *ngTemplateOutlet = 'btn; context: {btnText: "Experience"}'></ng-template>
         </div>
     </div>
 
 </section>
 
+<ng-template #btn let-btnText = 'btnText'>
+    <common-button-icon color = 'primary'>
+        <span text>{{btnText}}</span> 
+        <mat-icon icon style = 'margin-left: 10px;'>arrow_right_alt</mat-icon>
+    </common-button-icon>
+</ng-template>

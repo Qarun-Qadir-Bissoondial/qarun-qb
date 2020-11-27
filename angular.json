@@ -94,9 +94,7 @@
               "apps/voice-list/tsconfig.app.json",
               "apps/voice-list/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -121,9 +119,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/voice-list-e2e/tsconfig.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -141,9 +137,7 @@
             "outputPath": "dist/apps/tt-pothole-backend",
             "main": "apps/tt-pothole-backend/src/main.ts",
             "tsConfig": "apps/tt-pothole-backend/tsconfig.app.json",
-            "assets": [
-              "apps/tt-pothole-backend/src/assets"
-            ]
+            "assets": ["apps/tt-pothole-backend/src/assets"]
           },
           "configurations": {
             "production": {
@@ -168,9 +162,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/tt-pothole-backend/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/tt-pothole-backend/**/*.ts"]
           }
         },
         "test": {
@@ -195,9 +187,7 @@
             "outputPath": "dist/apps/voice-list-backend",
             "main": "apps/voice-list-backend/src/main.ts",
             "tsConfig": "apps/voice-list-backend/tsconfig.app.json",
-            "assets": [
-              "apps/voice-list-backend/src/assets"
-            ]
+            "assets": ["apps/voice-list-backend/src/assets"]
           },
           "configurations": {
             "production": {
@@ -222,9 +212,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/voice-list-backend/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/voice-list-backend/**/*.ts"]
           }
         },
         "test": {
@@ -245,9 +233,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/models/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/models/**/*.ts"]
           }
         },
         "test": {
@@ -283,9 +269,7 @@
               "apps/medical-records/src/favicon.ico",
               "apps/medical-records/src/assets"
             ],
-            "styles": [
-              "apps/medical-records/src/styles.scss"
-            ],
+            "styles": ["apps/medical-records/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -344,10 +328,7 @@
               "apps/medical-records/tsconfig.spec.json",
               "apps/medical-records/tsconfig.editor.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/medical-records/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/medical-records/**/*"]
           }
         },
         "test": {
@@ -380,13 +361,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/medical-records-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/medical-records-e2e/**/*"
-            ]
+            "tsConfig": ["apps/medical-records-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/medical-records-e2e/**/*"]
           }
         }
       }
@@ -415,9 +391,7 @@
               "apps/family-records/src/favicon.ico",
               "apps/family-records/src/assets"
             ],
-            "styles": [
-              "apps/family-records/src/styles.scss"
-            ],
+            "styles": ["apps/family-records/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -476,10 +450,7 @@
               "apps/family-records/tsconfig.spec.json",
               "apps/family-records/tsconfig.editor.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/family-records/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/family-records/**/*"]
           }
         },
         "test": {
@@ -512,13 +483,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/family-records-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/family-records-e2e/**/*"
-            ]
+            "tsConfig": ["apps/family-records-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/family-records-e2e/**/*"]
           }
         }
       }
@@ -609,10 +575,7 @@
               "apps/portfolio/tsconfig.spec.json",
               "apps/portfolio/tsconfig.editor.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/portfolio/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/portfolio/**/*"]
           }
         },
         "test": {
@@ -645,14 +608,39 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/portfolio-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/portfolio-e2e/**/*"
-            ]
+            "tsConfig": ["apps/portfolio-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/portfolio-e2e/**/*"]
           }
+        }
+      }
+    },
+    "ui-common": {
+      "projectType": "library",
+      "root": "libs/ui-common",
+      "sourceRoot": "libs/ui-common/src",
+      "prefix": "common",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-common/tsconfig.lib.json",
+              "libs/ui-common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-common/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

@@ -21,5 +21,6 @@ module.exports = {
     '<rootDir>/libs/models',
     '<rootDir>/apps/family-records',
     '<rootDir>/apps/portfolio',
+    '<rootDir>/libs/ui-common',
   ],
 };

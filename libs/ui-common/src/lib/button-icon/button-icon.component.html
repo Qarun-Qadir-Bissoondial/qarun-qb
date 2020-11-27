@@ -1,0 +1,6 @@
+<button mat-flat-button [color] = 'color'>
+    <div class="btn-wrapper" [style.flexDirection] = 'iconPosition === "after" ? "row" : "row-reverse"'>
+        <ng-content select=[text]></ng-content>
+        <ng-content select=[icon]></ng-content>
+    </div>
+</button>

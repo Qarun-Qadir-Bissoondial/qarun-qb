@@ -8,7 +8,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import { MatButtonModule } from '@angular/material/button';
-import { UiCommonModule } from '@qarun-qb/ui-common';
 
 /**
  * TODO
@@ -26,8 +25,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule,
-    UiCommonModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

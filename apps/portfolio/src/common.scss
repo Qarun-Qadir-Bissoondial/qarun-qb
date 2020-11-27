@@ -4,9 +4,14 @@
 .padding-med { padding: 16px; } 
 .padding-lg { padding: 24px; }
 
-.margin-sm { margin: 4px; }
-.margin-med { margin: 8px; }
-.margin-lg { margin: 16px; }
+.marg-sm { margin: 4px; }
+.marg-med { margin: 8px; }
+.marg-lg { margin: 16px; }
+.marg-0 { margin: 0 };
+.marg-t-0 { margin-top: 0 };
+.marg-b-0 { margin-bottom: 0 };
+.marg-l-0 { margin-left: 0 };
+.marg-r-0 { margin-right: 0 }l
 
 // text 
 .center { text-align: center; }

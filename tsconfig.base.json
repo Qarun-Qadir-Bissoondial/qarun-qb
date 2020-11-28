@@ -14,7 +14,8 @@
     "lib": ["es2018", "dom"],
     "types": ["jest"],
     "paths": {
-      "@voice-list/models": ["libs/models/src/index.ts"]
+      "@voice-list/models": ["libs/models/src/index.ts"],
+      "@qarun-qb/ui-common": ["libs/ui-common/src/index.ts"]
     },
     "rootDir": "."
   }

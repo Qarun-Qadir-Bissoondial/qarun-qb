@@ -45,6 +45,7 @@
     "@angular/router": "~10.2.0",
     "@angular/service-worker": "~10.2.0",
     "@ngrx/store": "^10.0.1",
+    "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
     "@nrwl/angular": "10.3.3",
     "annyang": "^2.6.1",
     "bcrypt": "^5.0.0",

@@ -513,7 +513,10 @@
               "apps/portfolio/src/favicon.ico",
               "apps/portfolio/src/assets"
             ],
-            "styles": ["apps/portfolio/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/portfolio/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -608,6 +611,36 @@
             "tsConfig": ["apps/portfolio-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/portfolio-e2e/**/*"]
           }
+        }
+      }
+    },
+    "ui-common": {
+      "projectType": "library",
+      "root": "libs/ui-common",
+      "sourceRoot": "libs/ui-common/src",
+      "prefix": "common",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-common/tsconfig.lib.json",
+              "libs/ui-common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-common/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

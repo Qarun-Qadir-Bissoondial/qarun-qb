@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
@@ -23,6 +25,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
     ScrollToModule.forRoot()
   ],
   providers: [],

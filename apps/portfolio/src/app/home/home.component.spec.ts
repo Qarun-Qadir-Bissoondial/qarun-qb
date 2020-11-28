@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ANGULAR_MATERIAL_IMPORTS } from 'global_testing/angular_material';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -8,6 +9,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [...ANGULAR_MATERIAL_IMPORTS, ScrollToModule.forRoot()],
       declarations: [ HomeComponent ]
     })
     .compileComponents();

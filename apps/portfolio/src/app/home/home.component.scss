@@ -1,19 +1,35 @@
 @import '../../common.scss';
 
+.page-spacing {
+    padding: 0 5vw;
+}
+
+.page-margin {
+    margin: 0 5vw;
+}
+
 .introduction {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+    height: calc(100vh - 56px);
+
     .img-title {
-        text-align: center;
+        display: flex;
+        justify-content: center;
 
         img {
             border-radius: 50%;
             max-width: 200px;
-            margin: 0 auto;
         }
     }
 
     .desc {
-        h2, p { text-align: center; }
-        h2 { font-weight: 500; }
+        position: relative;
+
+        h2, p { text-align: center }
+        h2 { font-weight: 500; @extend .marg-lg; }
         p { margin-bottom: 28px; padding: 0 10vw; }
     }
 
@@ -26,22 +42,36 @@
     }
 }
 
+.bounce {
+    position: absolute;
+    left: calc(50% - 20px);
+    bottom: -40px;
+    animation: bounce 1.5s cubic-bezier(0.72, 0.18, 0.25, 0.79) 0s infinite forwards;
+}
+
+@keyframes bounce {
+    0% { bottom: -40px }
+    50% { bottom: -25px }
+    100% { bottom: -40px; }
+}
+
 @media screen and (min-width: 768px) {
+    .page-spacing {
+        padding: 0 15vw;
+    }
+
     .introduction {
-        display: flex;
-        flex-direction: row-reverse;
-        padding: 40px 5vw;
-        justify-content: space-between;
-        align-items: center;
+        height: calc(100vh - 104px);
+        margin-top: 0;
 
         .desc {
-            max-width: 40vw;
-
-            h2, p { text-align: left; padding: 0; }
+            max-width: 50vw;
+            h2, p { padding: 0; margin-left: 0; margin-right: 0;;}
         }
 
         img {
             min-width: 250px;
+            max-width: 300px;
         }
 
         .actions {

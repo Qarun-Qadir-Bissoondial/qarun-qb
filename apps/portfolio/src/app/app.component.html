@@ -1,7 +1,8 @@
 <mat-toolbar color = 'primary'>
-  <span>{{title}}</span>
+  <button mat-flat-button routerLink = '/' color = 'primary' style = 'font-size: 24px;'>{{title}}</button>
   <span style = 'flex: 1 1'></span>
   <nav *ngIf = 'largeScreen$ | async'>
+    <button mat-flat-button color = 'primary' routerLink = '/'>Home</button>
     <button mat-flat-button color = 'primary' (click) = 'scroll(".introduction")'>Intro</button>
     <button mat-flat-button color = 'primary' (click) = 'scroll("#section")'>Services</button>
     <button mat-flat-button color = 'primary' (click) = 'scroll("#articles")'>Articles</button>

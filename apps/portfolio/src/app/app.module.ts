@@ -9,17 +9,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-
-/**
- * TODO
- */
+import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent  }
+  { path: '', component: HomeComponent  },
+  { path: 'projects', component: ProjectsComponent }
 ]
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ProjectsComponent
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),

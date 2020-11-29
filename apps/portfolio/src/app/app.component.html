@@ -1,6 +1,12 @@
 <mat-toolbar color = 'primary'>
   <span>{{title}}</span>
   <span style = 'flex: 1 1'></span>
+  <nav *ngIf = 'largeScreen$ | async'>
+    <button mat-flat-button color = 'primary' (click) = 'scroll(".introduction")'>Intro</button>
+    <button mat-flat-button color = 'primary' (click) = 'scroll("#section")'>Services</button>
+    <button mat-flat-button color = 'primary' (click) = 'scroll("#articles")'>Articles</button>
+    <button mat-flat-button color = 'primary' (click) = 'scroll(".introduction")'>Projects</button>
+  </nav>
   <div class="socials">
     <a href="https://twitter.com/QarunQB" target="_blank">
       <img src="assets/twitter-icon.png" alt="">

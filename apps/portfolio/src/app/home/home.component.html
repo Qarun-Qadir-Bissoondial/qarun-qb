@@ -15,7 +15,10 @@
             <span>DOCKER</span>
         </div>
 
-        <div class="bounce" [ngxScrollTo] = 'skillSection'>
+        <!-- <button mat-flat-button color = 'primary' class = 'm-3'>See My Projects</button> -->
+        <!-- <button mat-flat-button color = 'primary' class = 'm-3'>Get in Touch</button> -->
+
+        <div class="bounce" [ngxScrollTo] = 'introSection'>
             <button mat-mini-fab color = 'primary'>
                 <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
@@ -24,10 +27,10 @@
     
 </section>
 
-<section class="introduction bg-blue p-5" #skillSection>
+<section class="introduction bg-blue p-5" #introSection>
     <h2>Hi There! 👋</h2>
     <p>
-        My name is Qarun Qadir Bissoondial and I'm an avid developer focused on delivering websites and web apps as quickly and efficiently as possible. Here's what you can expect from me:
+        My name is Qarun Qadir Bissoondial and I'm an avid developer focused on delivering modern websites and web apps as quickly and efficiently as possible. Here's what you can expect from me:
     </p>
 
     <ul>
@@ -46,7 +49,7 @@
     </ul>
 </section>
 
-<section class='p-5'>
+<section id = 'services' class='p-5'>
     <h2>Services 💼</h2>
     <p>
         I offer a wide range of services including:
@@ -66,7 +69,7 @@
         <!-- Website performance improvement -->
         <div class="single-service p-2">
             <div class="img-holder">
-                <mat-icon>speed</mat-icon>
+                <mat-icon style = 'color: blue'>speed</mat-icon>
             </div>
             <h3>Performance Improvement</h3>
             <p>Load times, Animations, Page Transitions, etc.</p>
@@ -75,7 +78,7 @@
         <!-- API development -->
         <div class="single-service p-2">
             <div class="img-holder">
-                <mat-icon>api</mat-icon>
+                <mat-icon style = 'color: purple'>api</mat-icon>
             </div>
             <h3>API Development</h3>
             <p>REST, JWT, Database Connection, File Uploads, etc.</p>
@@ -101,7 +104,7 @@
 
 </section>
 
-<section class="p-5 bg-blue">
+<section id = 'articles' class="p-5 bg-blue">
     <h3>My Articles 📝</h3>
     <p>
         I firmly believe that teaching others is a great way to give back to the coding community.

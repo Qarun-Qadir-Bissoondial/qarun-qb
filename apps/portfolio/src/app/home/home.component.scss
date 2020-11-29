@@ -126,12 +126,14 @@
     }
 
     .splash-screen {
-        height: calc(100vh - 104px);
+        height: calc(100vh - 64px);
         margin-top: 0;
 
         .desc {
             max-width: 50vw;
-            h2, p { padding: 0; margin-left: 0; margin-right: 0;;}
+            h2, p { padding: 0; margin-left: 0; margin-right: 0;}
+
+            .skills {flex-wrap: nowrap;}
         }
 
         img {
@@ -139,17 +141,6 @@
             max-width: 300px;
         }
 
-        // .actions {
-        //     display: flex;
-        //     justify-content: spac font-weight: 600;
-
-        //     button {
-        //         margin-left: 0;
-        //         margin-right: 0;
-        //         width: 100px;   
-        //     }
-        // }
-        
     }
 
     .services {

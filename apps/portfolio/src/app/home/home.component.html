@@ -15,8 +15,8 @@
             <span>DOCKER</span>
         </div>
 
-        <button mat-flat-button color = 'primary' class = 'm-3' routerLink = '/projects'>See My Projects</button>
-        <!-- <button mat-flat-button color = 'primary' class = 'm-3'>Get in Touch</button> -->
+        <button mat-raised-button color = 'primary' class = 'm-3' routerLink = '/projects'>See My Projects</button>
+        <button mat-raised-button color = 'primary' class = 'm-3' [ngxScrollTo] = 'contactSection'>Get in Touch</button>
 
         <div class="bounce" [ngxScrollTo] = 'introSection'>
             <button mat-mini-fab color = 'primary'>
@@ -133,6 +133,45 @@
             </div>
             <h2><a href="https://qarunqb.medium.com/">Hashnode</a></h2>
         </div>
+    </div>
+</section>
+
+<section #contactSection class="p-5">
+    <h3>Get in Touch</h3>
+    <p class = 'mb-4'>
+        Contact me for business inquiries, developer advice or just stop by to say hello :) 
+    </p>
+
+    <div id="contact">
+        <a href="https://twitter.com/QarunQB">
+            <div class="contacts m-2 mat-elevation-z1">
+                <img class = 'p-2' src="assets/twitter-logo.png" alt="Twitter Logo">
+                <span>Follow me on Twitter</span>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/qarun-qadir-bissoondial/">
+            <div class="contacts m-2 mat-elevation-z1">
+                <img class = 'p-2' src="assets/linkedin.png" alt="Twitter Logo">
+                <span>Connect with me on LinkedIn</span>
+            </div>
+        </a>
+        
+        <!-- <a href="">
+            <div class="contacts m-2 mat-elevation-z1">
+                <img class = 'p-2' src="assets/upwork.png" alt="Twitter Logo">
+                <span>See my Upwork Profile</span>
+            </div>
+        </a> -->
+
+        <a href="mailto:qarun80@hotmail.com">
+            <div class="contacts m-2 mat-elevation-z1">
+                <mat-icon class = 'p-2'>email</mat-icon>
+                <span>Send me an e-mail</span>
+            </div>
+        </a>
+    
+        
     </div>
 </section>
 

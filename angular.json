@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "",
   "projects": {
     "ng-css-directives-demo": {
       "projectType": "application",
@@ -10,34 +10,32 @@
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/ng-css-directives-demo",
+      "sourceRoot": "apps/ng-css-directives-demo/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-css-directives-demo",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/apps/ng-css-directives-demo",
+            "index": "apps/ng-css-directives-demo/src/index.html",
+            "main": "apps/ng-css-directives-demo/src/main.ts",
+            "polyfills": "apps/ng-css-directives-demo/src/polyfills.ts",
+            "tsConfig": "apps/ng-css-directives-demo/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/ng-css-directives-demo/src/favicon.ico",
+              "apps/ng-css-directives-demo/src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["apps/ng-css-directives-demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "apps/ng-css-directives-demo/src/environments/environment.ts",
+                  "with": "apps/ng-css-directives-demo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -83,17 +81,15 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "apps/ng-css-directives-demo/src/test.ts",
+            "polyfills": "apps/ng-css-directives-demo/src/polyfills.ts",
+            "tsConfig": "apps/ng-css-directives-demo/tsconfig.spec.json",
+            "karmaConfig": "apps/ng-css-directives-demo/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/ng-css-directives-demo/src/favicon.ico",
+              "apps/ng-css-directives-demo/src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["apps/ng-css-directives-demo/src/styles.scss"],
             "scripts": []
           }
         },
@@ -101,19 +97,22 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "apps/ng-css-directives-demo/tsconfig.app.json",
+              "apps/ng-css-directives-demo/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
-        },
+        }
+      }
+    },
+    "ng-css-directives-demo-e2e": {
+      "projectType": "application",
+      "root": "apps/ng-css-directives-demo-e2e",
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "apps/ng-css-directives-demo-e2e/protractor.conf.js",
             "devServerTarget": "ng-css-directives-demo:serve"
           },
           "configurations": {
@@ -121,8 +120,70 @@
               "devServerTarget": "ng-css-directives-demo:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/ng-css-directives-demo-e2e/tsconfig.json",
+            "exclude": ["**/node_modules/**"]
+          }
         }
       }
-    }},
-  "defaultProject": "ng-css-directives-demo"
+    },
+    "ng-css-directives": {
+      "projectType": "library",
+      "root": "libs/ng-css-directives",
+      "sourceRoot": "libs/ng-css-directives/src",
+      "prefix": "qarun-qb",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/ng-css-directives/tsconfig.lib.json",
+            "project": "libs/ng-css-directives/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng-css-directives/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng-css-directives/tsconfig.lib.json",
+              "libs/ng-css-directives/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ng-css-directives/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng-css-directives"],
+          "options": {
+            "jestConfig": "libs/ng-css-directives/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-css-directives-demo",
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  }
 }

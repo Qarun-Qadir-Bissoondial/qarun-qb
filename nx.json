@@ -12,14 +12,15 @@
     "tsconfig.base.json": "*"
   },
   "projects": {
-    "ng-css-directives-demo": {
-      "tags": []
-    },
-    "ng-css-directives-demo-e2e": {
-      "tags": []
-    },
-    "ng-css-directives": {
+    "ng-ux-directives": {
       "tags": ["scope:public", "type:util", "target:all"]
+    },
+    "ng-ux-directives-demo": {
+      "tags": []
+    },
+    "ng-ux-directives-demo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ng-ux-directives-demo"]
     }
   }
 }

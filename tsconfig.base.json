@@ -13,7 +13,9 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@qarun-qb/ng-ux-directives": ["libs/ng-ux-directives/src/index.ts"]
+      "@qarun-qb/ng-ux-directives": ["libs/ng-ux-directives/src/index.ts"],
+      "@qarun-qb/useful.js": ["libs/useful.js/src/index.ts"],
+      "@qarun-qb/useful": ["libs/useful/src/index.ts"]
     },
     "rootDir": "."
   }

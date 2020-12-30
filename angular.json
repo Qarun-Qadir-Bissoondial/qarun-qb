@@ -154,6 +154,38 @@
           }
         }
       }
+    },
+    "useful": {
+      "root": "libs/useful",
+      "sourceRoot": "libs/useful/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/useful/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/useful"],
+          "options": {
+            "jestConfig": "libs/useful/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/useful",
+            "tsConfig": "libs/useful/tsconfig.lib.json",
+            "packageJson": "libs/useful/package.json",
+            "main": "libs/useful/src/index.ts",
+            "assets": ["libs/useful/*.md"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-ux-directives",

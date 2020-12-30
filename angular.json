@@ -3,45 +3,74 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "ng-css-directives-demo": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+    "ng-ux-directives": {
+      "projectType": "library",
+      "root": "libs/ng-ux-directives",
+      "sourceRoot": "libs/ng-ux-directives/src",
+      "prefix": "qarun-qb",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/ng-ux-directives/tsconfig.lib.json",
+            "project": "libs/ng-ux-directives/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng-ux-directives/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng-ux-directives/tsconfig.lib.json",
+              "libs/ng-ux-directives/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ng-ux-directives/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng-ux-directives"],
+          "options": {
+            "jestConfig": "libs/ng-ux-directives/jest.config.js",
+            "passWithNoTests": true
+          }
         }
-      },
-      "root": "apps/ng-css-directives-demo",
-      "sourceRoot": "apps/ng-css-directives-demo/src",
-      "prefix": "app",
+      }
+    },
+    "ng-ux-directives-demo": {
+      "projectType": "application",
+      "root": "apps/ng-ux-directives-demo",
+      "sourceRoot": "apps/ng-ux-directives-demo/src",
+      "prefix": "qarun-qb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/ng-css-directives-demo",
-            "index": "apps/ng-css-directives-demo/src/index.html",
-            "main": "apps/ng-css-directives-demo/src/main.ts",
-            "polyfills": "apps/ng-css-directives-demo/src/polyfills.ts",
-            "tsConfig": "apps/ng-css-directives-demo/tsconfig.app.json",
+            "outputPath": "dist/apps/ng-ux-directives-demo",
+            "index": "apps/ng-ux-directives-demo/src/index.html",
+            "main": "apps/ng-ux-directives-demo/src/main.ts",
+            "polyfills": "apps/ng-ux-directives-demo/src/polyfills.ts",
+            "tsConfig": "apps/ng-ux-directives-demo/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/ng-css-directives-demo/src/favicon.ico",
-              "apps/ng-css-directives-demo/src/assets"
-            ],
-            "styles": ["apps/ng-css-directives-demo/src/styles.scss"],
+            "assets": ["apps/ng-ux-directives-demo/src/favicon.ico", "apps/ng-ux-directives-demo/src/assets"],
+            "styles": ["apps/ng-ux-directives-demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/ng-css-directives-demo/src/environments/environment.ts",
-                  "with": "apps/ng-css-directives-demo/src/environments/environment.prod.ts"
+                  "replace": "apps/ng-ux-directives-demo/src/environments/environment.ts",
+                  "with": "apps/ng-ux-directives-demo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -64,112 +93,70 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-css-directives-demo:build"
+            "browserTarget": "ng-ux-directives-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-css-directives-demo:build:production"
+              "browserTarget": "ng-ux-directives-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-css-directives-demo:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/ng-css-directives-demo/src/test.ts",
-            "polyfills": "apps/ng-css-directives-demo/src/polyfills.ts",
-            "tsConfig": "apps/ng-css-directives-demo/tsconfig.spec.json",
-            "karmaConfig": "apps/ng-css-directives-demo/karma.conf.js",
-            "assets": [
-              "apps/ng-css-directives-demo/src/favicon.ico",
-              "apps/ng-css-directives-demo/src/assets"
-            ],
-            "styles": ["apps/ng-css-directives-demo/src/styles.scss"],
-            "scripts": []
+            "browserTarget": "ng-ux-directives-demo:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/ng-css-directives-demo/tsconfig.app.json",
-              "apps/ng-css-directives-demo/tsconfig.spec.json"
+              "apps/ng-ux-directives-demo/tsconfig.app.json",
+              "apps/ng-ux-directives-demo/tsconfig.spec.json",
+              "apps/ng-ux-directives-demo/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "ng-css-directives-demo-e2e": {
-      "projectType": "application",
-      "root": "apps/ng-css-directives-demo-e2e",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/ng-css-directives-demo-e2e/protractor.conf.js",
-            "devServerTarget": "ng-css-directives-demo:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ng-css-directives-demo:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/ng-css-directives-demo-e2e/tsconfig.json",
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "ng-css-directives": {
-      "projectType": "library",
-      "root": "libs/ng-css-directives",
-      "sourceRoot": "libs/ng-css-directives/src",
-      "prefix": "qarun-qb",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/ng-css-directives/tsconfig.lib.json",
-            "project": "libs/ng-css-directives/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/ng-css-directives/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ng-css-directives/tsconfig.lib.json",
-              "libs/ng-css-directives/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/ng-css-directives/**/*"]
+            "exclude": ["**/node_modules/**", "!apps/ng-ux-directives-demo/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ng-css-directives"],
+          "outputs": ["coverage/apps/ng-ux-directives-demo"],
           "options": {
-            "jestConfig": "libs/ng-css-directives/jest.config.js",
+            "jestConfig": "apps/ng-ux-directives-demo/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ng-ux-directives-demo-e2e": {
+      "root": "apps/ng-ux-directives-demo-e2e",
+      "sourceRoot": "apps/ng-ux-directives-demo-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ng-ux-directives-demo-e2e/cypress.json",
+            "tsConfig": "apps/ng-ux-directives-demo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ng-ux-directives-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-ux-directives-demo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/ng-ux-directives-demo-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/ng-ux-directives-demo-e2e/**/*"]
           }
         }
       }
     }
   },
-  "defaultProject": "ng-css-directives-demo",
+  "defaultProject": "ng-ux-directives",
   "cli": {
     "analytics": false,
     "defaultCollection": "@nrwl/angular"

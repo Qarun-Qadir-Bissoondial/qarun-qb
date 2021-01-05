@@ -21,9 +21,6 @@
     "ng-ux-directives-demo-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-ux-directives-demo"]
-    },
-    "useful": {
-      "tags": ["scope:public", "type:util", "target:all"]
     }
   }
 }
